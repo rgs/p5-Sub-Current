@@ -1,11 +1,17 @@
 package Sub::Current;
 
+use strict;
+use warnings;
+
 our $VERSION = '0.03';
 require XSLoader;
 XSLoader::load('Sub::Current', $VERSION);
 
 sub import {
-    *{caller() . '::ROUTINE'} = *ROUTINE;
+    do {
+        no strict 'refs';
+        *{caller() . '::ROUTINE'} = *ROUTINE;
+    };
 }
 
 __END__

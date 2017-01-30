@@ -3,7 +3,6 @@ Current.xs
 lib/Sub/Current.pm
 Makefile.PL
 MANIFEST
-META.yml
 t/01basic.t
 t/02specialblocks.t
 t/03autoload.t
