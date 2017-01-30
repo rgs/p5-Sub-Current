@@ -10,8 +10,9 @@ SV *
 ROUTINE()
     PREINIT:
 	CV *cv;
+	U32 dummy;
     CODE:
-	cv = Perl_find_runcv(aTHX_ NULL);
+	cv = Perl_find_runcv(aTHX_ &dummy);
 	if (CvUNIQUE(cv))
 	    RETVAL = &PL_sv_undef;
 	else
