@@ -5,9 +5,10 @@ require XSLoader;
 XSLoader::load('Sub::Current', $VERSION);
 
 sub import {
-    *{caller() . '::ROUTINE'} = *ROUTINE;
+    *{caller() . '::ROUTINE'} = \&ROUTINE;
 }
 
+1;
 __END__
 
 =head1 NAME
